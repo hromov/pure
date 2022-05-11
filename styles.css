@@ -59,20 +59,6 @@
     background: #fff;
     display: block;
 }
-
-
-#toggle-button.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-#toggle-button.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-#toggle-button.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
 .menu-links {
     display: flex;
     flex-direction: column;
@@ -87,18 +73,35 @@
     left: 0;
     transition: all 0.5s ease;
 }
-.menu-links.active {
-    top: 0;    
-    transition: all 0.5s ease;
-}
-.menu-links.active a {
-    padding: 1em 2em;
-    transition: all 0.3s ease;
-}
+
 .menu-links a:hover {
     color: #f7ff00;
     transition: all 0.3s ease;
 }
+
+
+.active .menu-links {
+    top: 0;    
+    transition: all 0.5s ease;
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+}
+.active .menu-links a {
+    padding: 1em 2em;
+    transition: all 0.3s ease;
+}
+
+.active #toggle-button .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.active #toggle-button .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.active #toggle-button .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 
 @media screen and (min-width: 55em) {
     .menu-links {
@@ -111,4 +114,36 @@
     .toggle {
         display: none;
     }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.footer-links {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1em;
+    justify-content: space-between;
+}
+.footer-links > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+.footer-links a {
+    text-decoration: none;
+}
+.socials {
+    display: flex;
+    gap: 1em;
+    font-size: 1.5em;
 }
