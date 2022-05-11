@@ -11,85 +11,90 @@
 </head>
 
 <body>
+
     <!-- Navbar Section -->
     <nav class="navbar">
-        <a href="#home" id="logo">COLOR</a>
-        <div class="toggle" id="menu">
+        <a href="#home" id="logo" class="logo">COLOR</a>
+        <div class="toggle" id="toggle-button">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        <ul class="menu-links">
+
+        <ul class="menu-links" id="menu">
             <li>
-                <a href="#home"id="home-page">Home</a>
+                <a href="#home" id="home-page">Home</a>
             </li>
             <li>
-                <a href="#about"id="about-page">About</a>
+                <a href="#about" id="about-page">About</a>
             </li>
             <li>
-                <a href="#services"id="services-page">Services</a>
+                <a href="#services" id="services-page">Services</a>
             </li>
             <li>
                 <a href="#sign-up" class="button" id="signup">Sign Up</a>
             </li>
         </ul>
     </nav>
+    <div class="container">
+        <div id="home">
+            <h1>Choose your <span>colors</span></h1>
+            <p>Unlimited Possibilities</p>
+            <button><a href="#">Explore</a></button>
+        </div>
+
+        <!-- About Section -->
+        <div id="about" class="block">
+            <div class="img-card"><i class="fas fa-layer-group"></i></div>
+            <div>
+                <h2>What do we do?</h2>
+                <h3>We help businesses scale</h3>
+                <p>Schedule a call to learn more about our services</p>
+                <button><a href="#">Schedule Call</a></button>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="services" id="services">
+            <h2>Our Services</h2>
+            <div class="services">
+                <div>
+                    <h3>Custom Colorways</h3>
+                    <p>AI Powered technology</p>
+                    <button>Get Started</button>
+                </div>
+                <div>
+                    <h3>Are you Ready?</h3>
+                    <p>Take the lepa</p>
+                    <button>Get Started</button>
+                </div>
+                <div>
+                    <h3>Full Gradients</h3>
+                    <p>100 Combinations</p>
+                    <button>Get Started</button>
+                </div>
+                <div>
+                    <h3>Infinite Choices</h3>
+                    <p>1000's of colors</p>
+                    <button>Get Started</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div id="sign-up" class="block">
+            <div>
+                <h2>Join Our Team</h2>
+                <h3>Sign Up Today</h3>
+                <p>See what makes us different</p>
+                <button><a href="#">Sign Up</a></button>
+            </div>
+            <div class="img-card" id="card-2"><i class="fas fa-users"></i></div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
-    <div id="home">
-        <h1>Choose your <span>colors</span></h1>
-        <p>Unlimited Possibilities</p>
-        <button><a href="#">Explore</a></button>
-    </div>
 
-    <!-- About Section -->
-    <div id="about" class="block">
-        <div class="img-card"><i class="fas fa-layer-group"></i></div>
-        <div>
-            <h2>What do we do?</h2>
-            <h3>We help businesses scale</h3>
-            <p>Schedule a call to learn more about our services</p>
-            <button><a href="#">Schedule Call</a></button>
-        </div>
-    </div>
-
-    <!-- Services Section -->
-    <div class="services" id="services">
-        <h2>Our Services</h2>
-        <div class="services">
-            <div>
-                <h3>Custom Colorways</h3>
-                <p>AI Powered technology</p>
-                <button>Get Started</button>
-            </div>
-            <div>
-                <h3>Are you Ready?</h3>
-                <p>Take the lepa</p>
-                <button>Get Started</button>
-            </div>
-            <div>
-                <h3>Full Gradients</h3>
-                <p>100 Combinations</p>
-                <button>Get Started</button>
-            </div>
-            <div>
-                <h3>Infinite Choices</h3>
-                <p>1000's of colors</p>
-                <button>Get Started</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Features Section -->
-    <div id="sign-up" class="block">
-        <div>
-            <h2>Join Our Team</h2>
-            <h3>Sign Up Today</h3>
-            <p>See what makes us different</p>
-            <button><a href="#">Sign Up</a></button>
-        </div>
-        <div class="img-card" id="card-2"><i class="fas fa-users"></i></div>
-    </div>
 
     <!-- Footer Section -->
     <footer>
@@ -120,16 +125,16 @@
             </div>
         </div>
         <div class="socials">
-            <div class="footer-logo">
+            <div class="logo">
                 <a href="/" id="footer-logo">COLOR</a>
             </div>
             <p>© COLOR 2020. All rights reserved</p>
             <div class="icons">
                 <a href="/" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="/" ><i class="fab fa-instagram"></i></a>
-                <a href="/" ><i class="fab fa-youtube"></i></a>
-                <a href="/" ><i class="fab fa-linkedin"></i></a>
-                <a href="/" ><i class="fab fa-twitter"></i></a>
+                <a href="/"><i class="fab fa-instagram"></i></a>
+                <a href="/"><i class="fab fa-youtube"></i></a>
+                <a href="/"><i class="fab fa-linkedin"></i></a>
+                <a href="/"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
     </footer>
