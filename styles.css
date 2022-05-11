@@ -14,19 +14,62 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1em;
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    gap: 2em;
+}
+
+footer {
+    margin-bottom: 1em;
+}
+
+.navbar {
+    flex-flow: row nowrap;
+}
+
+.container, footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 2em;
+    padding: 1rem 0;
+}
+@media screen and (min-width: 25rem) {
+    #home {
+        padding: 5rem 0;
+    }
 }
 
 .logo {
+    font-size: clamp(1.5rem, 1.5rem + 10vw, 4rem);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.colored {
     background: #f7ff00;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #db36a4, #f7ff00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.colored-2 {
+    background: #FC5C7D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+}
+.c-text {
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-    font-size: clamp(1.5rem, 1.5rem + 10vw, 4rem);
-    font-weight: 600;
 }
 
 .navbar {
@@ -84,9 +127,11 @@
     top: 0;    
     transition: all 0.5s ease;
     box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+    gap: 2em;
+    padding-bottom: 3em;
 }
 .active .menu-links a {
-    padding: 1em 2em;
+    padding: 1.5rem 2rem;
     transition: all 0.3s ease;
 }
 
@@ -103,7 +148,7 @@
 }
 
 
-@media screen and (min-width: 55em) {
+@media screen and (min-width: 60em) {
     .menu-links {
         position: relative;
         top: 0;
@@ -114,16 +159,6 @@
     .toggle {
         display: none;
     }
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1em;
-    font-size: 1.2em;
-    margin-bottom: 1em;
 }
 
 .footer-links {
@@ -141,9 +176,153 @@ footer {
 }
 .footer-links a {
     text-decoration: none;
+    font-size: 1.5rem;
+}
+footer h3 {
+    font-size: 2rem;
+    white-space: nowrap;
 }
 .socials {
     display: flex;
     gap: 1em;
     font-size: 1.5em;
+}
+h1, h2 {
+    margin-bottom: 1rem;
+}
+h1 {
+    font-size: clamp(3rem, 3rem + 10vw, 6rem);
+}
+h2, .button {
+    font-size: clamp(2rem, 2rem + 3vw, 3rem);
+}
+h3 {
+    font-size: clamp(1.5rem, 1.5rem + 2vw, 2.5rem);
+}
+p, button {
+    font-size: clamp(1.2rem, 1.2rem + 1vw, 2rem);
+}
+.button {
+    padding: 1rem 1.5rem;    
+    border-radius: 6px;
+    background: #FC5C7D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6A82FB, #FC5C7D); 
+    transition: all 0.35s;
+    z-index: 2;
+    display: block;
+    font-weight: 600;
+}
+
+.button:hover {
+    box-shadow: inset 200px 0px 0px #FC5C7D;
+    color: #fff;
+}
+a.button {
+    text-decoration: none;
+}
+.img-card {
+    width: 80vw;
+    height: 80vw;
+    border-radius: 6px;
+    margin: 3rem 0;
+}
+.img-card i {
+    font-size: clamp(10rem, 10rem + 5vw, 20rem);
+    background: transparent;
+}
+.block, .services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+    padding: 1em;
+}
+.block > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    justify-content: center;
+    align-items: center;
+    max-height: 500px;
+}
+.block {
+    margin: 25vh 0;
+}
+.service {
+    width: 80vw;
+    height: 80vw;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    margin-bottom: 2em;
+    transition: all 0.35s;
+}
+.service:hover {
+    cursor: pointer;
+    transform: scale(1.06);
+    transition: all 0.35s;
+
+}
+.service h3, .service p {
+    background: transparent;
+}
+.service button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 6px;
+}
+.service h3 {
+    font-size: clamp(1.5em, 1.5em + 10vw, 2.5em);
+}
+.service:first-of-type, .service:last-of-type {
+    background: #FF5F6D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.service:nth-of-type(2) {
+    background: #2196f3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f44336, #2196f3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f44336, #2196f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.service:nth-of-type(3) {
+    background: #ff4b1f;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1fddff, #ff4b1f);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1fddff, #ff4b1f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+@media screen and (min-width: 60em) {
+    .services, .block {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .block > div {
+        flex: 1;
+    }
+    .service, .img-card {
+        width: 45vw;
+        height: 45vw;
+        max-width: 500px;
+    }
+}
+@media screen and (min-width: 90em) {
+    .services {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .service {
+       flex: 1;
+       width: auto;
+       height: 350px;
+    }
+    #services h2 {
+        margin-bottom: 3rem;
+    }
+    
 }
