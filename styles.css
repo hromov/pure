@@ -13,6 +13,10 @@
     --b-radius: 6px;
     --global-padding: 0 1rem;
     --main-gap: 1.5rem;
+    --img-const: 0.8;
+    --img-size: calc(var(--img-const) * 100vw);
+    --img-max-size: calc(var(--img-const)*var(--abs-max));
+    --img-font-size: 50vw;
 }
 
 .colored {
@@ -39,13 +43,14 @@
     align-items: center;
     max-width: var(--abs-max);
     padding: var(--global-padding);
-    margin-top: 1rem;
+    margin: 1rem auto 0 auto;
 }
 
 .container {
     display: grid;
     max-width: var(--abs-max);
     padding: var(--global-padding);
+    margin: 0 auto;
     gap: 30vh;
 }
 
@@ -124,49 +129,44 @@ footer {
 .active #toggle-button .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
-@media screen and (min-width: 60em) {
-    .menu-links {
-        top: 0;
-
-    }
-    .toggle {
-        display: none;
-    }
-}
 
 #home {
     display: grid;
     gap: var(--main-gap);
     justify-items: center;
     text-align: center;
-    margin-top: 15vh;
+    margin-top: 12vh;
 }
 
 .block {
     display: grid;
     gap: var(--main-gap);
     grid-auto-rows: 1fr;
-    justify-items: center;
+    place-items: center;
 }
 .block .info {
     display: grid;
     place-items: center;
     text-align: center;
+    gap: var(--main-gap);
 }
 h1, h2, h3 {
     text-align: center;
 }
 h1 {
-    font-size: 5rem;
+    font-size: clamp(5rem, 2rem + 12vw, 10rem);
 }
 h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2.5rem, 0.5rem + 10vw, 6rem);
 }
 h3 {
-    font-size: 2rem;
+    font-size: clamp(2rem, 10vw, 4rem);
 }
-p {
-    font-size: 1.5rem;
+p, footer h3, .socials {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+}
+.small {
+    font-size: clamp(1rem, 5vw, 2rem);
 }
 .button {
     background: #FC5C7D;  /* fallback for old browsers */
@@ -176,7 +176,8 @@ p {
     z-index: 2;
     display: block;
     font-weight: 600;
-    padding: 1rem 2rem;
+    padding: 1rem 3rem;
+    font-size: 2rem;
 }
 
 .button:hover {
@@ -187,14 +188,15 @@ a.button {
     text-decoration: none;
 }
 .img-card {
-    width: 80vw;
-    height: 80vw;
+    width: var(--img-size);
+    height: var(--img-size);
+    max-width: var(--img-max-size);
     display: grid;
     place-items: center;
 }
 .img-card i {
     background: transparent;
-    font-size: 50vw;
+    font-size: var(--img-font-size);
 }
 
 .services {
@@ -207,8 +209,9 @@ a.button {
     place-items: center;
     gap: var(--main-gap);
     padding: 2rem 1rem;
-    height: 80vw;
+    /* height: var(--img-size); */
     transition: all 0.35s;
+    text-align: center;
 }
 .service:hover {
     cursor: pointer;
@@ -240,21 +243,6 @@ a.button {
     background: -webkit-linear-gradient(to right, #1fddff, #ff4b1f);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #1fddff, #ff4b1f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-@media screen and (min-width: 60em) {
-    .services, .block {
-    }
-    .service, .img-card {
-    }
-}
-@media screen and (min-width: 90em) {
-    .services {
-    }
-    .service {
-    }
-    #services-block h2 {
-    }
-    
-}
 .footer-links {
     display: grid;
     gap: var(--main-gap);
@@ -264,20 +252,48 @@ a.button {
 .footer-links a {
     text-decoration: none;
 }
-footer h3 {
-    font-size: 1.5rem;
-}
 .footer-links > div {
     display: grid;
     justify-items: center;
     gap: 1rem;
 }
-.copyright {
-    font-size: 1rem
-}
 .socials {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    font-size: 1.5rem;
+}
+
+@media screen and (min-width: 50em) {
+    .menu-links {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        top: 0;
+    }
+    .toggle {
+        display: none;
+    }
+    .container .button {
+        font-size: 3rem;
+        padding: 2rem 6rem;
+    }
+    .services {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 80em) {
+    .block {
+        grid-template-columns: 1fr 1fr;
+    }
+    .img-card {
+        width: calc(var(--img-size)/2);
+        height: calc(var(--img-size)/2);
+        max-width: calc(var(--img-max-size)/2);
+        max-height: calc(var(--img-max-size)/2);
+    }
+    .img-card i {
+        font-size: clamp(100px, calc(var(--img-font-size)/2), 300px);
+    }
 }
