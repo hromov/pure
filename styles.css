@@ -9,7 +9,7 @@
 }
 
 :root {
-    --abs-max: 1200px;
+    --abs-max: 1600px;
     --b-radius: 6px;
     --global-padding: 0 1rem;
     --main-gap: 1.5rem;
@@ -59,7 +59,7 @@ footer {
     max-width: var(--abs-max);
     padding: var(--global-padding);
     gap: var(--main-gap);
-    margin: 15vh auto 1em auto;
+    margin: 15vh auto 1rem auto;
     justify-items: stretch;
     text-align: center;
 }
@@ -154,16 +154,16 @@ h1, h2, h3 {
     text-align: center;
 }
 h1 {
-    font-size: clamp(5rem, 2rem + 12vw, 10rem);
+    font-size: clamp(5rem, 2rem + 12vw, 8rem);
 }
 h2 {
-    font-size: clamp(2.5rem, 0.5rem + 10vw, 6rem);
+    font-size: clamp(2.5rem, 0.5rem + 10vw, 5rem);
 }
 h3 {
-    font-size: clamp(2rem, 10vw, 4rem);
+    font-size: clamp(2rem, 10vw, 3.5rem);
 }
 p, footer h3, .socials {
-    font-size: clamp(1.5rem, 8vw, 3rem);
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
 }
 .small {
     font-size: clamp(1rem, 5vw, 2rem);
@@ -176,8 +176,8 @@ p, footer h3, .socials {
     z-index: 2;
     display: block;
     font-weight: 600;
-    padding: 1rem 3rem;
-    font-size: 2rem;
+    padding: 1em 3em;
+    font-size: 1.5rem;
 }
 
 .button:hover {
@@ -227,6 +227,7 @@ a.button {
     border-radius: var(--b-radius);
     font-size: 2rem;
     padding: 1rem 2rem;
+    cursor: pointer;
 }
 .service:first-of-type, .service:last-of-type {
     background: #FF5F6D;  /* fallback for old browsers */
@@ -276,7 +277,7 @@ a.button {
     }
     .container .button {
         font-size: 3rem;
-        padding: 2rem 6rem;
+        padding: 1em 3em;
     }
     .services {
         grid-template-columns: 1fr 1fr;
@@ -295,5 +296,14 @@ a.button {
     }
     .img-card i {
         font-size: clamp(100px, calc(var(--img-font-size)/2), 300px);
+    }
+    .services {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-wdith: 100em) {
+    .services {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
