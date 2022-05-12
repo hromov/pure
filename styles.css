@@ -10,6 +10,9 @@
 
 :root {
     --abs-max: 1200px;
+    --b-radius: 6px;
+    --global-padding: 0 1rem;
+    --main-gap: 1.5rem;
 }
 
 .colored {
@@ -31,21 +34,33 @@
 }
 
 .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     max-width: var(--abs-max);
-    margin: 0 auto 1em auto;
+    padding: var(--global-padding);
+    margin-top: 1rem;
 }
 
-.container, footer {
+.container {
+    display: grid;
     max-width: var(--abs-max);
-    margin: 0 auto;
+    padding: var(--global-padding);
+    gap: 15vh;
 }
 
 footer {
+    display: grid;
     max-width: var(--abs-max);
-    margin: 0 auto 1em auto;
+    padding: var(--global-padding);
+    gap: var(--main-gap);
+    margin: 15vh auto 1em auto;
+    justify-items: stretch;
+    text-align: center;
 }
 
 .logo {
+    font-size: 3rem;
     text-decoration: none;
 }
 
@@ -58,6 +73,7 @@ footer {
     transform: translate(5%, 20%);
     margin-top: -10px;
     z-index: 1001;
+    background: transparent;
 }
 
 .toggle .bar {
@@ -69,6 +85,11 @@ footer {
     display: block;
 }
 .menu-links {
+    display: grid;
+    gap: var(--main-gap);
+    justify-items: center;
+    padding: 1rem 0;
+    font-size: 2rem;
     width: 100%;
     list-style: none;
     position: absolute;
@@ -103,11 +124,10 @@ footer {
 .active #toggle-button .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
-
-
 @media screen and (min-width: 60em) {
     .menu-links {
         top: 0;
+
     }
     .toggle {
         display: none;
@@ -115,34 +135,44 @@ footer {
 }
 
 #home {
+    display: grid;
+    gap: var(--main-gap);
+    justify-items: center;
+    text-align: center;
+    margin-top: 8vh;
 }
+
 @media screen and (min-width: 25rem) {
     #home {
-        padding: 5rem 0;
+        /* padding: 5rem 0; */
     }
 }
 
-.footer-links {
-    width: 100%;
+.block {
+    display: grid;
+    gap: var(--main-gap);
+    grid-auto-rows: 1fr;
+    justify-items: center;
 }
-.footer-links > div {
+.block .info {
+    display: grid;
+    place-items: center;
+    text-align: center;
 }
-.footer-links a {
-    text-decoration: none;
-}
-footer h3 {
-}
-.socials {
-}
-h1, h2 {
+h1, h2, h3 {
+    text-align: center;
 }
 h1 {
+    font-size: 5rem;
 }
-h2, .button {
+h2 {
+    font-size: 2.5rem;
 }
 h3 {
+    font-size: 2rem;
 }
-p, button {
+p {
+    font-size: 1.5rem;
 }
 .button {
     background: #FC5C7D;  /* fallback for old browsers */
@@ -152,6 +182,7 @@ p, button {
     z-index: 2;
     display: block;
     font-weight: 600;
+    padding: 1rem 2rem;
 }
 
 .button:hover {
@@ -162,15 +193,27 @@ a.button {
     text-decoration: none;
 }
 .img-card {
+    width: 80vw;
+    height: 80vw;
+    display: grid;
+    place-items: center;
 }
 .img-card i {
     background: transparent;
+    font-size: 50vw;
 }
-.block, .services {
-}
-.block {
+
+.services {
+    display: grid;
+    gap: var(--main-gap);
+    margin-top: 2rem;
 }
 .service {
+    display: grid;
+    place-items: center;
+    gap: var(--main-gap);
+    padding: 2rem 1rem;
+    height: 80vw;
     transition: all 0.35s;
 }
 .service:hover {
@@ -184,9 +227,9 @@ a.button {
 }
 .service button {
     border: none;
-    border-radius: 6px;
-}
-.service h3 {
+    border-radius: var(--b-radius);
+    font-size: 2rem;
+    padding: 1rem 2rem;
 }
 .service:first-of-type, .service:last-of-type {
     background: #FF5F6D;  /* fallback for old browsers */
@@ -217,4 +260,30 @@ a.button {
     #services-block h2 {
     }
     
+}
+.footer-links {
+    display: grid;
+    gap: var(--main-gap);
+    grid-template-columns: 1fr 1fr;
+}
+
+.footer-links a {
+    text-decoration: none;
+}
+footer h3 {
+    font-size: 1.5rem;
+}
+.footer-links > div {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+}
+.copyright {
+    font-size: 1rem
+}
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.5rem;
 }
